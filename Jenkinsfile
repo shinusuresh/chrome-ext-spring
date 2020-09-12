@@ -1,12 +1,10 @@
-node {
+pipeline {
     checkout scm
-    pipeline {
-        agent { dockerfile true }
-        stages {
-            stage('Test') {
-                steps {
-                    sh 'java --version'
-                }
+    agent { dockerfile true }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'java --version'
             }
         }
     }
