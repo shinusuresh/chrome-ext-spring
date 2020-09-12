@@ -1,5 +1,10 @@
 pipeline {
-    stage('Checkout') {
-        checkout scm
+    agent { label 'dockerserver' }
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
     }
 }
